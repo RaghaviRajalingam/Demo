@@ -1,0 +1,74 @@
+<div class="container">
+<p style="font-weight: bold;font-size: 2rem; padding-left: 60px;">Registration form</p>
+<form [formGroup]="user" (ngSubmit)="onSubmit()">
+    <label>
+        First Name:
+        <input type="text" formControlName="firstName" pattern="[a-zA-Z]*">
+    </label><br>
+    <div
+        *ngIf="(submitted  && user.controls['firstName'].errors)  || (user.controls['firstName'].errors && user.controls['firstName'].touched)">
+        <div *ngIf="user.controls['firstName'].errors.required" class="alert">First Name is required</div>
+        <div *ngIf="user.controls['firstName'].errors.pattern" class="alert">Please enter the valid first name</div>
+    </div><br>
+    <label>
+        Last Name:
+        <input type="text" formControlName="lastName" pattern="[a-zA-Z]*">
+    </label><br>
+    <div
+        *ngIf="(submitted  && user.controls['lastName'].errors) || (user.controls['lastName'].errors && user.controls['lastName'].touched)">
+        <div *ngIf="user.controls['lastName'].errors.required" class="alert">Last Name is required</div>
+        <div *ngIf="user.controls['lastName'].errors.pattern" class="alert">Please enter the valid last name</div>
+    </div><br>
+    <label>
+        Date of Birth:
+        <input type="date" formControlName="dob">
+    </label><br>
+    <div
+        *ngIf="(submitted  && user.controls['dob'].errors) || (user.controls['dob'].errors && user.controls['dob'].touched)">
+        <div *ngIf="user.controls['dob'].errors.required" class="alert">Date of Birth is required</div>
+    </div><br>
+    <label>
+        Email:
+        <input type="text" formControlName="email">
+    </label><br>
+    <div
+        *ngIf="(submitted  && user.controls['email'].errors) || (user.controls['email'].errors && user.controls['email'].touched)">
+        <div *ngIf="user.controls['email'].errors.required" class="alert">Email is required</div>
+        <div *ngIf="user.controls['email'].errors.email" class="alert">Email address is invalid</div>
+    </div><br>
+    <label for="gender">Gender:</label>   
+        <input id="male" type="radio" value="male" name="gender" formControlName="gender">
+        <label for="male">Male</label>
+        <input id="female" type="radio" value="female" name="gender" formControlName="gender">
+        <label for="female">Female</label><br> 
+    <div
+        *ngIf="(submitted  && user.controls['gender'].errors) || (user.controls['gender'].errors && user.controls['gender'].touched)">
+        <div *ngIf="user.controls['gender'].errors.required" class="alert">Gender is required</div>
+    </div><br>
+    <label for="gender"> Select your country </label>
+    <select name="country" formControlName="country">
+        <option value="" disabled selected>--Select your country--</option>
+        <option value="india">India</option>
+        <option value="finland">Finland</option>
+        <option value="us">US</option>
+    </select>
+    <div
+        *ngIf="(submitted  && user.controls['country'].errors) || (user.controls['country'].errors && user.controls['country'].touched)">
+        <div *ngIf="user.controls['country'].errors.required" class="alert">Country is required</div>
+    </div>
+    <br><br><label>Upload Profile </label>
+    <input type="file" formControlName="profile" /><br>
+    <div *ngIf="submitted  && user.controls['profile'].errors">
+        <div *ngIf="user.controls['profile'].errors.required" class="alert">Please upload your profile</div>
+        <div *ngIf="user.controls['profile'].errors.extension && user.controls['profile'].touched" class="alert">Upload
+            a valid format (only jpeg, gif, png)</div>
+    </div>
+    <br><div>
+        <input type="checkbox" formControlName="acceptTerms" id="acceptTerms"/>
+        <label for="acceptTerms">Accept Terms & Conditions</label>
+        <div *ngIf="submitted && user.controls['acceptTerms'].errors" class="alert">Accept Ts & Cs is required</div>
+    </div><br>
+    <button type="submit" (click)=" gotoHome()">Submit</button>
+    <button type="reset" (click)="onReset()">Reset</button>
+</form>
+</div>
