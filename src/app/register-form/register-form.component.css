@@ -25,3 +25,9 @@ input[type=text] {
   .container{
     padding-left: 480px;
   }
+.title {
+  font-weight: bold;
+  font-size: 2rem; 
+  padding-left: 60px; 
+  padding-top: 10px;
+}

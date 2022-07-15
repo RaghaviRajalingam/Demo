@@ -4,6 +4,7 @@ import { RxwebValidators } from '@rxweb/reactive-form-validators';
 import { Router } from '@angular/router';
 
 
+
 @Component({
   selector: 'app-register-form',
   templateUrl: './register-form.component.html',
