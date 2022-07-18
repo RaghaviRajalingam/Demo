@@ -13,8 +13,8 @@ import { Router } from '@angular/router';
 export class RegisterFormComponent implements OnInit {
   submitted = false;
   user: FormGroup | any;
-  constructor(private formBuilder: FormBuilder,
-    private router: Router) { }
+  constructor(private readonly formBuilder: FormBuilder,
+    private readonly router: Router) { }
   ngOnInit() {
     this.user = this.formBuilder.group({
       firstName: ['', Validators.required, Validators.pattern('[a-zA-Z]*')],

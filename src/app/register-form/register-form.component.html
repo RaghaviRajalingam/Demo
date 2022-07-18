@@ -1,5 +1,5 @@
-<div class="container">
-<p class="title">Registration form</p>
+<div class="container">    
+<p class="title align">Registration form</p>
 <form [formGroup]="user" (ngSubmit)="onSubmit()">
     <label>
         First Name:
@@ -67,8 +67,11 @@
         <input type="checkbox" formControlName="acceptTerms" id="acceptTerms"/>
         <label for="acceptTerms">Accept Terms & Conditions</label>
         <div *ngIf="submitted && user.controls['acceptTerms'].errors" class="alert">Accept Ts & Cs is required</div>
-    </div><br>
-    <button type="submit" (click)=" gotoHome()">Submit</button>
-    <button type="reset" (click)="onReset()">Reset</button>
+    </div>
+    <div class="align">
+        <button mat-raised-button color="primary" type="submit" (click)=" gotoHome()">Submit</button>
+        <button mat-raised-button color="primary" class="reset-btn" type="reset" (click)="onReset()">Reset</button>
+    </div>
+  
 </form>
 </div>

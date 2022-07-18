@@ -7,6 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
 import { RegisterFormComponent } from './register-form/register-form.component';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +23,9 @@ import { RegisterFormComponent } from './register-form/register-form.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatIconModule,
     RxReactiveFormsModule
   ],
   providers: [],
