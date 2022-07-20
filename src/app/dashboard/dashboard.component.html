@@ -1,1 +1,40 @@
 <p class="title align">Form Submitted Successfully !!</p>
+<p class="sub-title">
+    List of Team Members
+</p>
+  <!-- <mat-selection-list [multiple]="false">
+    <mat-list-option *ngFor="let detail of details">
+        {{detail.Team[0].GameActivityTag}}
+    </mat-list-option>
+  </mat-selection-list> -->
+
+  
+    <table class="table">
+      <thead>
+        <tr>
+          <th>GameActivityTag</th>
+          <th>TeamName</th>
+          <th>StartDate</th>
+          <th>EndDate</th>
+          <th>Action Button</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="text-align:center;" *ngFor="let list of details.Team">
+          <td>{{list.GameActivityTag}}</td>
+          <td>{{list.TeamCode}}</td>
+          <td>{{list.StartDate}}</td>
+          <td>{{list.EndDate}}</td>
+          <td>       
+            <button mat-raised-button color="primary" type="view">View Details</button>
+            <button mat-fab color="primary" class="delete-btn">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+
+
+    

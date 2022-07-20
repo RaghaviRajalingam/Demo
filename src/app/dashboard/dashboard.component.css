@@ -1,8 +1,23 @@
 .title {
-    color: blue;
+    color: rgb(12, 90, 47);
     font-size: 1.5rem; 
+    font-weight: 500;
+  }
+  .sub-title{
+    padding-left: 2rem;
+    color: rgb(13, 13, 126);
+    font-size: 1.25rem; 
+    font-weight: 500;
   }
   .align{
-    padding-left: 60px; 
+    text-align: center;
     padding-top: 10px;
   }
+  table {
+    width: 100%;
+  }
+  .delete-btn{
+    margin-left: 30px;
+    size-adjust: 0.5rem;
+  }
+  
