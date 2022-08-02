@@ -1,0 +1,28 @@
+<ng-container>
+    <div style="font-weight: bold;">Bar Chart</div>
+    <div style="width: 60%;">
+        <canvas
+        baseChart [chartType]="'bar'" 
+          [datasets]="chartData" 
+          [labels]="chartLabels">
+        </canvas>
+    </div>
+    <br>
+    <div style="font-weight: bold;">Line Chart</div>
+    <div style="width: 60%;">
+        <canvas
+        baseChart [chartType]="'line'" 
+          [datasets]="chartData" 
+          [labels]="chartLabels">
+        </canvas>
+    </div>
+    <br>
+    <div style="font-weight: bold;">Pie Chart</div>
+    <div style="width: 60%;">
+        <canvas
+        baseChart [chartType]="'pie'" 
+          [datasets]="chartData" 
+          [labels]="chartLabels">
+        </canvas>
+    </div>
+</ng-container>

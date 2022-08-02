@@ -3,11 +3,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContentComponent } from './content/content.component';
+import { ChartComponent } from './chart/chart.component';
+import { ReusableContentComponent } from './reusable-content/reusable-content.component';
 
 const routes: Routes = [
   { path: 'dashboard', component:DashboardComponent },
-  { path: '', component:RegisterFormComponent},
-  { path: 'content', component:ContentComponent}
+  { path: 'register', component:RegisterFormComponent},
+  { path: 'content', component:ContentComponent},
+  { path: 'chart', component:ChartComponent},
+  { path: 'ngContent', component:ReusableContentComponent}
 ];
 
 @NgModule({

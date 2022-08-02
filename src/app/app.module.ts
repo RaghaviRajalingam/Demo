@@ -13,13 +13,17 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { ContentComponent } from './content/content.component';
 import { ChartsModule } from 'ng2-charts';
+import { ChartComponent } from './chart/chart.component';
+import { ReusableContentComponent } from './reusable-content/reusable-content.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     RegisterFormComponent,
-    ContentComponent
+    ContentComponent,
+    ChartComponent,
+    ReusableContentComponent
   ],
   imports: [
     BrowserModule,

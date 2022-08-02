@@ -6,21 +6,9 @@
     <span>My Application</span>
   </mat-toolbar>
   </p>
-  <app-content>
-    <strong class="app">Senior Developer</strong>
-    <strong class="app1">Experience : 5 years</strong>
-</app-content>
-<app-content>
-    <strong class="app">Application Developer</strong>
-    <strong class="app1">Experience : 2 years</strong>
-</app-content>
-<div style="width: 60%;">
-  <canvas
-  baseChart [chartType]="'bar'" 
-    [datasets]="chartData" 
-    [labels]="chartLabels">
-  </canvas>
-</div>
+  <button mat-raised-button color="primary" type="submit" (click)="gotoForm()">Register Form</button>
+  <button mat-raised-button style="margin-left:10px;" color="primary" type="submit" (click)="gotoChart()">Ng2 Chart</button>
+  <button mat-raised-button style="margin-left:10px;" color="primary" type="submit" (click)="gotocontent()">Ng Content</button>
 <!-- ag grid table -->
 <!-- <ag-grid-angular 
     style="width: 700px; height: 500px;" 

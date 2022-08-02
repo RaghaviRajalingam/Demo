@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
-
+import { Router } from '@angular/router';
 const array = [1, 2, 'three', true];
 
 from(array)
@@ -12,34 +12,10 @@ from(array)
 })
 export class AppComponent implements OnInit {
   
-constructor() { }
+constructor(private readonly router: Router) { }
   ngOnInit() {
   }
-  //ng2 Charts data
-  chartData = [
-    {
-      data: [330, 600, 260, 700],
-      label: 'Account A'
-    },
-    {
-      data: [120, 455, 100, 340],
-      label: 'Account B'
-    },
-    {
-      data: [45, 67, 800, 500],
-      label: 'Account C'
-    },
-    {
-      data: [45, 67, 800, 500],
-      label: 'Account D'
-    }
-  ];
-  chartLabels = [
-    'January',
-    'February',
-    'March',
-    'April'
-  ];
+
   //ng grid Data
   columnDefs = [
     {headerName: 'Make', field: 'make'},
@@ -52,5 +28,14 @@ rowData = [
     {make: 'Ford', model: 'Mondeo', price: 32000},
     {make: 'Porsche', model: 'Boxter', price: 72000}
 ];
+gotoForm() {
+  this.router.navigate(['/register']);
+}
+gotoChart() {
+  this.router.navigate(['/chart']);
+}
+gotocontent() {
+  this.router.navigate(['/ngContent']);
+}
 }
 
