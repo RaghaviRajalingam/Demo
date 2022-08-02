@@ -46,6 +46,9 @@ export class RegisterFormComponent implements OnInit {
       this.router.navigate(['/dashboard']);
     }
   }
+  content(){
+    this.router.navigate(['/content']);
+  }
   onReset() {
     this.submitted = false;
     this.user.reset();

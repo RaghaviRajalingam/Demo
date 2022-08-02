@@ -69,9 +69,8 @@
         <div *ngIf="submitted && user.controls['acceptTerms'].errors" class="alert">Accept Ts & Cs is required</div>
     </div>
     <div class="align">
-        <button mat-raised-button color="primary" type="submit" (click)=" gotoHome()">Submit</button>
+        <button mat-raised-button color="primary" type="submit" (click)="gotoHome()">Submit</button>
         <button mat-raised-button color="primary" class="reset-btn" type="reset" (click)="onReset()">Reset</button>
     </div>
-  
 </form>
 </div>

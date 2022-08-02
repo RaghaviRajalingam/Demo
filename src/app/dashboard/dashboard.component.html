@@ -2,13 +2,7 @@
 <p class="sub-title">
     List of Team Members
 </p>
-  <!-- <mat-selection-list [multiple]="false">
-    <mat-list-option *ngFor="let detail of details">
-        {{detail.Team[0].GameActivityTag}}
-    </mat-list-option>
-  </mat-selection-list> -->
-
-  
+<ng-container>
     <table class="table">
       <thead>
         <tr>
@@ -20,21 +14,25 @@
         </tr>
       </thead>
       <tbody>
-        <tr style="text-align:center;" *ngFor="let list of details.Team">
-          <td>{{list.GameActivityTag}}</td>
-          <td>{{list.TeamCode}}</td>
-          <td>{{list.StartDate}}</td>
-          <td>{{list.EndDate}}</td>
-          <td>       
-            <button mat-raised-button color="primary" type="view">View Details</button>
-            <button mat-fab color="primary" class="delete-btn">
-              <mat-icon>delete</mat-icon>
-            </button>
-          </td>
-        </tr>
+        <div  *ngFor="let list of details.Team">
+          <tr style="text-align:center;">
+            <td>{{list.GameActivityTag}}</td>
+            <td>{{list.TeamCode}}</td>
+            <td>{{list.StartDate}}</td>
+            <td>{{list.EndDate}}</td>
+            <td>       
+              <button mat-raised-button color="primary" type="view">View Details</button>
+              <button mat-fab color="primary" class="delete-btn">
+                <mat-icon>delete</mat-icon>
+              </button>
+            </td>
+          </tr>
+        </div>
+        
       </tbody>
 
     </table>
+  </ng-container> 
 
 
     

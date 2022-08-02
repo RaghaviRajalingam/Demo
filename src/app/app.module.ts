@@ -11,16 +11,20 @@ import { RegisterFormComponent } from './register-form/register-form.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import { ContentComponent } from './content/content.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    ContentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ChartsModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,

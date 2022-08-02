@@ -6,4 +6,26 @@
     <span>My Application</span>
   </mat-toolbar>
   </p>
+  <app-content>
+    <strong class="app">Senior Developer</strong>
+    <strong class="app1">Experience : 5 years</strong>
+</app-content>
+<app-content>
+    <strong class="app">Application Developer</strong>
+    <strong class="app1">Experience : 2 years</strong>
+</app-content>
+<div style="width: 60%;">
+  <canvas
+  baseChart [chartType]="'bar'" 
+    [datasets]="chartData" 
+    [labels]="chartLabels">
+  </canvas>
+</div>
+<!-- ag grid table -->
+<!-- <ag-grid-angular 
+    style="width: 700px; height: 500px;" 
+    class="ag-theme-balham"
+    [rowData]="rowData" 
+    [columnDefs]="columnDefs">
+</ag-grid-angular> -->
 <router-outlet></router-outlet>
