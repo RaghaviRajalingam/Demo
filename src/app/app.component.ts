@@ -31,6 +31,9 @@ rowData = [
 gotoForm() {
   this.router.navigate(['/register']);
 }
+gotoApiDetails() {
+  this.router.navigate(['/apidetails']);
+}
 gotoChart() {
   this.router.navigate(['/chart']);
 }

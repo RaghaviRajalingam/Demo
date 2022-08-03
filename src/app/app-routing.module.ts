@@ -5,13 +5,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ContentComponent } from './content/content.component';
 import { ChartComponent } from './chart/chart.component';
 import { ReusableContentComponent } from './reusable-content/reusable-content.component';
+import { DetailsTableComponent } from './details-table/details-table.component';
 
 const routes: Routes = [
   { path: 'dashboard', component:DashboardComponent },
   { path: 'register', component:RegisterFormComponent},
   { path: 'content', component:ContentComponent},
   { path: 'chart', component:ChartComponent},
-  { path: 'ngContent', component:ReusableContentComponent}
+  { path: 'ngContent', component:ReusableContentComponent},
+  { path: 'apidetails', component:DetailsTableComponent}
 ];
 
 @NgModule({

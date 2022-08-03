@@ -15,6 +15,7 @@ import { ContentComponent } from './content/content.component';
 import { ChartsModule } from 'ng2-charts';
 import { ChartComponent } from './chart/chart.component';
 import { ReusableContentComponent } from './reusable-content/reusable-content.component';
+import { DetailsTableComponent } from './details-table/details-table.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ReusableContentComponent } from './reusable-content/reusable-content.co
     RegisterFormComponent,
     ContentComponent,
     ChartComponent,
-    ReusableContentComponent
+    ReusableContentComponent,
+    DetailsTableComponent
   ],
   imports: [
     BrowserModule,
