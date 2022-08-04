@@ -12,10 +12,11 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { ContentComponent } from './content/content.component';
-import { ChartsModule } from 'ng2-charts';
 import { ChartComponent } from './chart/chart.component';
 import { ReusableContentComponent } from './reusable-content/reusable-content.component';
 import { DetailsTableComponent } from './details-table/details-table.component';
+import { AgGridModule } from 'ag-grid-angular';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { DetailsTableComponent } from './details-table/details-table.component';
     ChartComponent,
     ReusableContentComponent,
     DetailsTableComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -38,7 +39,8 @@ import { DetailsTableComponent } from './details-table/details-table.component';
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
-    RxReactiveFormsModule
+    RxReactiveFormsModule,
+    AgGridModule
   ],
   providers: [],
   bootstrap: [AppComponent]
