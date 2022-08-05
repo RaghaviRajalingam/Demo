@@ -13,18 +13,24 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RegisterFormComponent implements OnInit {
   submitted = false;
+  submitTicket = false;
   user: FormGroup | any;
 
-columnDefs: ColDef[] = [
-  { field: 'make' },
-  { field: 'model' },
-  { field: 'price' }
+  columnDefs = [
+    {headerName: 'Make', field: 'make'},
+    {headerName: 'Model', field: 'model'},
+    {headerName: 'Price', field: 'price', editable: true} //make particular column editable
 ];
+
 rowData = [
-  { make: 'Toyota', model: 'Celica', price: 35000 },
-  { make: 'Ford', model: 'Mondeo', price: 32000 },
-  { make: 'Porsche', model: 'Boxster', price: 72000 }
+    {make: 'Toyota', model: 'Celica', price: 35000},
+    {make: 'Ford', model: 'Mondeo', price: 32000},
+    {make: 'Porsche', model: 'Boxter', price: 72000}
 ];
+defaultColDef = {
+  sortable: true,  //sorting
+  filter: true     //filter
+};
 firstName: any;
   lastName: any;
   dynamicForm: FormGroup | any;
@@ -69,7 +75,7 @@ firstName: any;
     this.lastName = this.user.get('lastName').value;
     console.log("First Name:::",this.lastName);
     //To disable to feild after submission
-    setTimeout(() => this.user.disable(), 2000);
+    // setTimeout(() => this.user.disable(), 2000);
 
     // stop here if form is invalid
     if (this.user.invalid) {
@@ -79,6 +85,7 @@ firstName: any;
 
   gotoHome() {
     if (this.submitted === true && !this.user.invalid) {
+      setTimeout(() => this.user.disable(), 2000);
       this.router.navigate(['/dashboard']);
     }
   }
@@ -111,7 +118,7 @@ firstName: any;
   }
 
   submit() {
-      this.submitted = true;
+      this.submitTicket = true;
 
       // stop here if form is invalid
       if (this.dynamicForm.invalid) {
