@@ -17,9 +17,7 @@ import { ReusableContentComponent } from './reusable-content/reusable-content.co
 import { DetailsTableComponent } from './details-table/details-table.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { ChartsModule } from 'ng2-charts';
-import { StoreModule } from '@ngrx/store';
-import { reducers } from './reducers/reducers';
-import { ArticleComponent } from './article/article.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,8 +26,7 @@ import { ArticleComponent } from './article/article.component';
     ContentComponent,
     ChartComponent,
     ReusableContentComponent,
-    DetailsTableComponent,
-    ArticleComponent
+    DetailsTableComponent
     ],
   imports: [
     BrowserModule,
@@ -43,8 +40,7 @@ import { ArticleComponent } from './article/article.component';
     MatToolbarModule,
     MatIconModule,
     RxReactiveFormsModule,
-    AgGridModule,
-    StoreModule.forRoot(reducers)
+    AgGridModule
   ],
   providers: [],
   bootstrap: [AppComponent]
