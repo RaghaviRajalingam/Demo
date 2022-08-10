@@ -6,6 +6,7 @@ import { ContentComponent } from './content/content.component';
 import { ChartComponent } from './chart/chart.component';
 import { ReusableContentComponent } from './reusable-content/reusable-content.component';
 import { DetailsTableComponent } from './details-table/details-table.component';
+import { ProductsComponent } from './products/products.component';
 
 const routes: Routes = [
   { path: 'dashboard', component:DashboardComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'content', component:ContentComponent},
   { path: 'chart', component:ChartComponent},
   { path: 'ngContent', component:ReusableContentComponent},
-  { path: 'apidetails', component:DetailsTableComponent}
+  { path: 'apidetails', component:DetailsTableComponent},
+  { path: 'ngrxstore', component:ProductsComponent},
 ];
 
 @NgModule({

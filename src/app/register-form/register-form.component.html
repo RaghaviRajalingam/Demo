@@ -2,7 +2,7 @@
 <div class="container">  
     Reactive Form With Validations: <input type="checkbox" ng-model="myForm">  
     Dynamic Form: <input type="checkbox" ng-model="myDynamic">  
-    Ng Grid: <input type="checkbox" ng-model="myGrid">  
+    Ag Grid: <input type="checkbox" ng-model="myGrid">  
 <div ng-show="myForm">
     <p class="title align">Registration form</p>
 <form [formGroup]="user" (ngSubmit)="onSubmit()">
@@ -90,14 +90,6 @@
     [columnDefs]="columnDefs"
     [defaultColDef]="defaultColDef">
 </ag-grid-angular>
-<!-- <ag-grid-angular
-  style="width: 700px; height: 500px;"
-  class="ag-theme-balham"
-  [rowData]="rowData"
-  [columnDefs]="columnDefs"
-  [defaultColDef]="defaultColDef"
->
-</ag-grid-angular> -->
 <br><br>
 </div>
 <div ng-show="myDynamic">

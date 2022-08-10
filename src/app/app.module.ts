@@ -18,6 +18,9 @@ import { DetailsTableComponent } from './details-table/details-table.component';
 import { AgGridModule } from 'ag-grid-angular';
 import { ChartsModule } from 'ng2-charts';
 
+import { ProductsComponent } from './products/products.component';
+import { addProductReducer } from './reducers/product.reducer';
+import { StoreModule } from '@ngrx/store';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,10 +29,13 @@ import { ChartsModule } from 'ng2-charts';
     ContentComponent,
     ChartComponent,
     ReusableContentComponent,
-    DetailsTableComponent
+    DetailsTableComponent,
+    ProductsComponent,
+ 
     ],
   imports: [
     BrowserModule,
+    StoreModule.forRoot({product: addProductReducer}),
     AppRoutingModule,
     ChartsModule,
     FormsModule,

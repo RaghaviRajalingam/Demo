@@ -27,5 +27,8 @@ gotoChart() {
 gotocontent() {
   this.router.navigate(['/ngContent']);
 }
+gotoNgrxStore() {
+  this.router.navigate(['/ngrxstore']);
+}
 }
 
