@@ -25,4 +25,13 @@
           [labels]="chartLabels">
         </canvas>
     </div>
+    <br>
+    <div style="font-weight: bold;">Radar Chart</div>
+    <div style="width: 60%;">
+        <canvas
+        baseChart [chartType]="'radar'" 
+          [datasets]="chartData" 
+          [labels]="chartLabels">
+        </canvas>
+    </div>
 </ng-container>
