@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +6,13 @@ import { Observable } from 'rxjs';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit, OnDestroy {
+  @Input() mySuccessMsg: any; 
+
   value: any;
   constructor() { }
 
   ngOnInit(): void {
+    alert(this.mySuccessMsg);
     const observable = new Observable(subscriber => {
       subscriber.next(1);
       subscriber.next(2);

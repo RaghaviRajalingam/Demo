@@ -26,7 +26,9 @@ export class ProductsComponent implements OnInit {
       }
     });
   }
-
+  GetChildData(data: any){  
+    alert(data);  
+ }  
   ngOnInit() {
   }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ServicesService } from '../services.service';
+import {ApiService } from '../shared/services/api.service';
 
 @Component({
   selector: 'app-details-table',
@@ -8,16 +8,23 @@ import {ServicesService } from '../services.service';
 })
 export class DetailsTableComponent implements OnInit {
   details:any;
-
-  constructor(private readonly service:ServicesService) { }
+  errorMessage:any;
+  errorBlock: boolean = false;
+  constructor(private readonly service:ApiService) { }
 
     ngOnInit(): void {
-      this.service.getDetails()
-      .subscribe(response => {
-        this.details = response;
-        console.log("API Details",this.details);
-        console.log("Array",this.details.Team);
-        console.log("Details",this.details.Team[0].GameActivityTag);
+      // this.service.getData().subscribe((data)=>{
+      //  console.log("Data from server",data);
+      // }, error =>{
+      //   this.errorBlock = true;
+      //   this.errorMessage = error.message;
+      // }
+      // );
+      this.service.getDetails().subscribe((response)=>{
+        console.log("Table Data from Server", response);
+      }, error=>{
+        this.errorBlock = true;
+        this.errorMessage = error.message;
       });
     }
 }

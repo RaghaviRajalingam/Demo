@@ -1,10 +1,10 @@
-import { Component, OnInit  } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder,FormArray, Validators } from '@angular/forms';
 import { RxwebValidators } from '@rxweb/reactive-form-validators';
 import { Router } from '@angular/router';
 import {  ColDef } from 'ag-grid-community';
 import { HttpClient } from '@angular/common/http';
-
+import { ValidateUrl, NoNegativeNumbers } from '../shared/customValidator';
 
 @Component({
   selector: 'app-register-form',
@@ -15,7 +15,7 @@ export class RegisterFormComponent implements OnInit {
   submitted = false;
   submitTicket = false;
   user: FormGroup | any;
-
+  mySuccessMessage:string ="Submitted Successfully"
   columnDefs = [
     {headerName: 'Make', field: 'make'},
     {headerName: 'Model', field: 'model'},
@@ -50,6 +50,8 @@ firstName: any;
       email: ['', [Validators.required, Validators.email]],
       gender: ['', Validators.required],
       country: ['', Validators.required],
+      age: ['', [Validators.required, NoNegativeNumbers]],
+      websiteUrl: ['', [Validators.required, ValidateUrl]],
       profile: ['', [Validators.required,
       RxwebValidators.extension({ extensions: ["jpeg", "gif", "png"] })
       ]
@@ -83,12 +85,12 @@ firstName: any;
     }
   }
 
-  gotoHome() {
-    if (this.submitted === true && !this.user.invalid) {
-      setTimeout(() => this.user.disable(), 2000);
-      this.router.navigate(['/dashboard']);
-    }
-  }
+  // gotoHome() {
+  //   if (this.submitted === true && !this.user.invalid) {
+  //     setTimeout(() => this.user.disable(), 2000);
+  //     this.router.navigate(['/dashboard']);
+  //   }
+  // }
   content(){
     this.router.navigate(['/content']);
   }
@@ -115,8 +117,7 @@ firstName: any;
               this.t.removeAt(i);
           }
       }
-  }
-
+  }  
   submit() {
       this.submitTicket = true;
 

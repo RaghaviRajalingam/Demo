@@ -32,6 +32,14 @@
         *ngIf="(submitted  && user.controls['dob'].errors) || (user.controls['dob'].errors && user.controls['dob'].touched)">
         <div *ngIf="user.controls['dob'].errors.required" class="alert">Date of Birth is required</div>
     </div><br>
+    <label>Age:</label>
+  <input formControlName="age" type="number"><br>
+  <div>
+    <span *ngIf="user.get('age').errors?.negativeNumber" class="alert">
+      Please provide a valid age
+    </span>
+  </div><br>
+  <br>
     <label>
         Email:
         <input type="text" formControlName="email">
@@ -67,15 +75,26 @@
         <div *ngIf="user.controls['profile'].errors.required" class="alert">Please upload your profile</div>
         <div *ngIf="user.controls['profile'].errors.extension && user.controls['profile'].touched" class="alert">Upload
             a valid format (only jpeg, gif, png)</div>
-    </div>
+    </div><br>
+    <div>
+        <label>
+          Website URL:
+          <input formControlName="websiteUrl" placeholder="Your website">
+        </label>
+        <div class="alert"
+          *ngIf="(user.get('websiteUrl').touched) && user.get('websiteUrl').invalid">
+          Only URLs served over HTTPS are accepted.
+        </div>
+      </div>
     <br><div>
         <input type="checkbox" formControlName="acceptTerms" id="acceptTerms"/>
         <label for="acceptTerms">Accept Terms & Conditions</label>
         <div *ngIf="submitted && user.controls['acceptTerms'].errors" class="alert">Accept Ts & Cs is required</div>
     </div>
     <div class="align">
-        <button mat-raised-button color="primary" type="submit" (click)="gotoHome()">Submit</button>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
         <button mat-raised-button color="primary" class="reset-btn" type="reset" (click)="onReset()">Reset</button>
+        <app-dashboard *ngIf ="this.submitted === true && !this.user.invalid" [mySuccessMsg]="mySuccessMessage"></app-dashboard>
     </div>
 </form>
 </div>

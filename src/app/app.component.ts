@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild,AfterViewInit, ElementRef } from '@angular/core';
 import { AsyncSubject,BehaviorSubject,Observable, from } from 'rxjs';
 import { Router } from '@angular/router';
+
 //BehaviorSubject from rxjs
 const subject = new BehaviorSubject(123);
 subject.subscribe(console.log);
@@ -30,10 +31,8 @@ from(array)
 
 export class AppComponent implements OnInit  {
   value: any;
-
   constructor(private readonly router: Router) { }
   ngOnInit() {
-
     //map using rxjs
     // const observable = of(1, 2, 3, 4, 5, 6);
     // const subscription = observable.pipe(

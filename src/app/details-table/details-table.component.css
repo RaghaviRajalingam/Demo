@@ -20,4 +20,8 @@
     margin-left: 30px;
     size-adjust: 0.5rem;
   }
+  .alert{
+    align-content: center;
+    color: red;
+  }
   

@@ -21,6 +21,7 @@ import { ChartsModule } from 'ng2-charts';
 import { ProductsComponent } from './products/products.component';
 import { addProductReducer } from './reducers/product.reducer';
 import { StoreModule } from '@ngrx/store';
+import { StudentComponent } from './student/student.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +32,7 @@ import { StoreModule } from '@ngrx/store';
     ReusableContentComponent,
     DetailsTableComponent,
     ProductsComponent,
+    StudentComponent,
  
     ],
   imports: [

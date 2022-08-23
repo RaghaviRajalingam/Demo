@@ -1,9 +1,9 @@
-<p class="sub-title">
+<p class="sub-title" *ngIf="errorBlock === false">
     List of Team Members
 </p>
 <ng-container>
     <table class="table">
-      <thead>
+      <thead *ngIf="errorBlock === false">
         <tr>
           <th>GameActivityTag</th>
           <th>TeamName</th>
@@ -12,6 +12,7 @@
           <th>Action Button</th>
         </tr>
       </thead>
+      <div class="alert">{{errorMessage}}</div>
       <tbody>
           <tr style="text-align:center;"  *ngFor="let list of details.Team">
             <td>{{list.GameActivityTag}}</td>
